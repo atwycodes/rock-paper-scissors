@@ -9,22 +9,21 @@ function computerPlay() {
     return gameChoices[random]
 }
 
-//let computerSelection = computerPlay()
-// let playerSelection = prompt("Enter your chosen weapon!")
+// converting to lowercase to remove need for case-sensitive input
+let computerSelection = computerPlay().toLowerCase(); 
+let playerSelection = String(prompt("Enter your chosen weapon!")).toLowerCase(); 
 
+function playRound(playerSelection,computerSelection) {
+  computerPlay()
+  if (playerSelection == computerSelection) {
+    return `Tie Game. You selected ${playerSelection} & Your Opponent selected ${computerSelection}`
 
+  } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
+    return `You Lost... ${computerSelection} beats ${playerSelection}` 
 
-function playRound(playerSelection, computerSelection) {
-    computerSelection = "Rock"
-    playerSelection = String(prompt("Enter your chosen weapon!"));
-    if (playerSelection == computerSelection) {
-        return "Tie Game"
-    }
-    else {
-        return "playerSelection == computer Selection is false" 
-    }
+  } else {
+    return `You Won! ${playerSelection} beats ${computerSelection}` 
+  }
 }
 
-function playRound() {
-// to run one round of the game.
-} 
+
