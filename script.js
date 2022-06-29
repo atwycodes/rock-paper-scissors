@@ -9,11 +9,22 @@ function computerPlay() {
     return gameChoices[random]
 }
 
-const computerSelection = computerPlay()
+//let computerSelection = computerPlay()
+// let playerSelection = prompt("Enter your chosen weapon!")
 
-function playGame(playerSelection, computerSelection) {
-    let playerSelection = prompt("Enter your chosen weapon!")
-    if playerSelection == computerSelection {
-      // to continue criteria
+
+
+function playRound(playerSelection, computerSelection) {
+    computerSelection = "Rock"
+    playerSelection = String(prompt("Enter your chosen weapon!"));
+    if (playerSelection == computerSelection) {
+        return "Tie Game"
+    }
+    else {
+        return "playerSelection == computer Selection is false" 
     }
 }
+
+function playRound() {
+// to run one round of the game.
+} 
