@@ -19,7 +19,7 @@ function playRound() {
     let computerSelection = computerPlay().toLowerCase(); 
     let playerSelection = String(prompt("Enter your chosen weapon!")).toLowerCase(); 
     if (playerSelection == computerSelection) {
-    return result = `Tie Game. You selected ${playerSelection} & Your Opponent selected ${computerSelection}`
+        return result = `Tie Game. You selected ${playerSelection} & Your Opponent selected ${computerSelection}`
     // losing logic
     } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
         computerScore++
