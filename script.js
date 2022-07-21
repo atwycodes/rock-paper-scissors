@@ -33,12 +33,15 @@ function playRound() {
     }
 }
 
+
+
+
 // game() runs the playRound() function 5 times, keeps score and reports a winner or loser at the end.
-function game () {
-    for (let i = 0; i < 5; i++) {
-        playRound();
-        console.log(`Round ${i+1} results:`)
-        console.log(result);
-     }
-     return console.log(`PLAYER ${playerScore} vs ${computerScore} COMPUTER`)
-}
+// function game () {
+//     for (let i = 0; i < 5; i++) {
+//         playRound();
+//         console.log(`Round ${i+1} results:`)
+//         console.log(result);
+//      }
+//      return console.log(`PLAYER ${playerScore} vs ${computerScore} COMPUTER`)
+// }
