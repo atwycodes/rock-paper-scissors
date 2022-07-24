@@ -1,19 +1,26 @@
 // Defining starting array for choices in the game.
-const gameChoices = ["Rock", "Paper", "Scissors"]; 
+const gameChoicesList = document.querySelectorAll('.choice');
+const gameChoicesListArray = Array.from(gameChoicesList);
+let options = [];
+
+gameChoicesListArray.forEach((gameChoice) => {
+    options.push(`${gameChoice.id}`);
+ });
+// gameChoices.forEach((choice) =>{
+//     choice.addEventListener("click", playRound(gameChoices.id)) 
+// });
+
+let playerScore = 0;
+let computerScore =0;
 
 function computerPlay() {
     // this function will randomly return either "Rock", "Paper" or "Scissors".
 
-    const random = Math.floor(Math.random() * gameChoices.length);
+    const random = Math.floor(Math.random() * options.length);
     
-    return gameChoices[random]
+    return options[random]
 }
 
-// converting to lowercase to remove need for case-sensitive input
-
-// if variable is a global function, it must be called as function(globalvar1, globalvar2)
-let playerScore = 0;
-let computerScore =0;
 
 function playRound() {
     let computerSelection = computerPlay().toLowerCase(); 
