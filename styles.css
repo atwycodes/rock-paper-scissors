@@ -1,27 +1,38 @@
-.title-result {
-    color: red;
-    border: 1px solid red;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    margin-left: 20%;
-    margin-right: 20%;
+body {
+    display: block;
+    margin: 0px;
+    font-family: 'Roboto';
+    background-color:#222831;
+    color: gold;
+}
+
+header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.title .result {
-    
-}
-
-.choice {
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.game-choices {
-    display: flex;
-    border: 1px solid red;
     justify-content: center;
     align-items: center;
+}
+
+.results {
+    display: flex;
+    gap: 30px;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.btn-choice {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-radius: 15px;
+    border: 2px solid gold;
+    padding-bottom: 10px;
+}
+
+.sign {
+    font-size: 50px;
 }
