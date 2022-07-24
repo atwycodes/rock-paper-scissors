@@ -1,5 +1,5 @@
 // Defining starting array for choices in the game.
-const gameChoicesList = document.querySelectorAll('.choice');
+const gameChoicesList = document.querySelectorAll('.btn-choice');
 const gameChoicesListArray = Array.from(gameChoicesList);
 let options = [];
 

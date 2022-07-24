@@ -10,20 +10,24 @@
         <header>
             <div class="title">Rock-Paper-Scissors!</div>
         </header>
-        <section class="results">
-            <div class="result" id="playerResult">You : Score</div>
-            <div class="result" id="computerResult">Computer : Score</div>
-            <div class="result" id="gameResult">you won, smtg beats smtg</div>
+        <section class="result-main">
+            <section class="result-top">
+                <div class="result" id="playerResult">You : Score</div>
+                <div class="result" id="computerResult">Computer : Score</div>
+            </section>
+            <section>
+                <div class="result-bottom" id="gameResult">you won, smtg beats smtg</div>
+            </section>
         </section>
         <section class="buttons">
-            <button class="btn-choice">
-                <div class="sign" id="rockBtn">&#9994</div>
+            <button class="btn-choice" id="rock">
+                <div class="sign">&#9994</div>
             </button>
-            <button class="btn-choice">
-                <div class="sign" id="paperBtn">&#9995</div>
+            <button class="btn-choice" id="paper">
+                <div class="sign">&#9995</div>
             </button>
-            <button class="btn-choice">
-                <div class="sign" id="paperBtn">&#9996</div>
+            <button class="btn-choice" id="scissors">
+                <div class="sign">&#9996</div>
             </button>
         </section>
 </body>

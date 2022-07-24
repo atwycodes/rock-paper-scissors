@@ -10,13 +10,28 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #4e5968;
+    padding: 25px;
+    font-weight: bold;
+    font-size: 25px;
 }
-
-.results {
+.result-main {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.result-top {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 15px;
     gap: 30px;
 }
 
+.result-bottom {
+    margin-bottom: 100px;
+}
 
 .buttons {
     display: flex;
