@@ -46,6 +46,7 @@ header {
     border-radius: 15px;
     border: 2px solid gold;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 .sign {

@@ -1,17 +1,14 @@
 // Defining starting array for choices in the game.
 const gameChoicesList = document.querySelectorAll('.btn-choice');
-const gameChoicesListArray = Array.from(gameChoicesList);
+const gameChoicesListArray = Array.from(gameChoicesList); //convert nodelist to array
 let options = [];
 
 gameChoicesListArray.forEach((gameChoice) => {
     options.push(`${gameChoice.id}`);
  });
-// gameChoices.forEach((choice) =>{
-//     choice.addEventListener("click", playRound(gameChoices.id)) 
-// });
 
 let playerScore = 0;
-let computerScore =0;
+let computerScore = 0;
 
 function computerPlay() {
     // this function will randomly return either "Rock", "Paper" or "Scissors"
@@ -52,12 +49,15 @@ function playRound() {
         return result =  `${playerSelection} is invalid. Please call the function again.`;
     }
 }
-// game() runs the playRound() function 5 times, keeps score and reports a winner or loser at the end.
-// function game () {
-//     for (let i = 0; i < 5; i++) {
-//         playRound();
-//         console.log(`Round ${i+1} results:`)
-//         console.log(result);
-//      }
-//      return console.log(`PLAYER ${playerScore} vs ${computerScore} COMPUTER`)
-// }
+
+// DOM Manipulation
+
+const playerChoice = document.querySelector("#playerChoice");
+const playerContent = document.createElement("div");
+playerContent.textContent = "Test";
+playerChoice.appendChild(playerContent);
+
+const computerChoice = document.querySelector("#computerChoice");
+const computerContent = document.createElement("div");
+computerContent.textContent = "Test";
+computerChoice.appendChild(computerContent);
