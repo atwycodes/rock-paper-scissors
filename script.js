@@ -1,25 +1,17 @@
-// Defining starting array for choices in the game.
-const gameChoicesList = document.querySelectorAll('.btn-choice');
-const gameChoicesListArray = Array.from(gameChoicesList); //convert nodelist to array
-let options = [];
-
-gameChoicesListArray.forEach((gameChoice) => {
-    options.push(`${gameChoice.id}`);
- });
+// GAME CODE
+options = ["rock", "paper", "scissors"]
 
 let playerScore = 0;
 let computerScore = 0;
 
 function computerPlay() {
-    // this function will randomly return either "Rock", "Paper" or "Scissors"
     const random = Math.floor(Math.random() * options.length);
-    return options[random]
+    return options[random];
 }
 
-function playRound() {
-    let computerSelection = computerPlay().toLowerCase(); 
-    let playerSelection = String(prompt("Enter your chosen weapon!")).toLowerCase(); 
-    
+function playRound(playerSelection) {
+    let computerSelection = computerPlay();
+
     const losingConditions = {
         rock: "paper",
         paper: "scissors",
@@ -50,14 +42,29 @@ function playRound() {
     }
 }
 
-// DOM Manipulation
+// UI MANIPULATION
 
-const playerChoice = document.querySelector("#playerChoice");
-const playerContent = document.createElement("div");
-playerContent.textContent = "Test";
-playerChoice.appendChild(playerContent);
+// EVENT LISTENING FOR CLICKS
+const rockBtn = document.querySelector("#rock");
+rockBtn.addEventListener("click", () => playRound("rock"));
 
-const computerChoice = document.querySelector("#computerChoice");
-const computerContent = document.createElement("div");
-computerContent.textContent = "Test";
-computerChoice.appendChild(computerContent);
+// const btn = document.querySelector('#btn');
+// btn.addEventListener('click', () => {
+//   alert("Hello World");
+// });
+
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+
+// APPENDING CHOSEN WEAPONS
+// const playerChoice = document.querySelector("#playerChoice");
+// const playerContent = document.createElement("div");
+// playerContent.textContent = `${playerSelection}`;
+// playerChoice.appendChild(playerContent);
+
+// const computerChoice = document.querySelector("#computerChoice");
+// const computerContent = document.createElement("div");
+// computerContent.textContent = `${computerSelection}`;
+// computerChoice.appendChild(computerContent);
+
+
