@@ -9,9 +9,7 @@ function computerPlay() {
     return options[random];
 }
 
-function playRound(playerSelection) {
-    let computerSelection = computerPlay();
-
+function playRound(playerSelection,computerSelection) {
     const losingConditions = {
         rock: "paper",
         paper: "scissors",
@@ -24,7 +22,7 @@ function playRound(playerSelection) {
         scissors: "paper",
     }
     
-    if (playerSelection == computerSelection) {
+    if (playerSelection === computerSelection) {
         return result = `Tie Game. You selected ${playerSelection} & Your Opponent selected ${computerSelection}`;
 
     } else if (losingConditions[playerSelection] === computerSelection) {
@@ -42,19 +40,23 @@ function playRound(playerSelection) {
     }
 }
 
+function handleClick(playerSelection) {
+    let computerSelection = computerPlay();
+    playRound(playerSelection,computerSelection);
+    console.log(result);
+}
+
 // UI MANIPULATION
 
 // EVENT LISTENING FOR CLICKS
 const rockBtn = document.querySelector("#rock");
-rockBtn.addEventListener("click", () => playRound("rock"));
-
-// const btn = document.querySelector('#btn');
-// btn.addEventListener('click', () => {
-//   alert("Hello World");
-// });
+rockBtn.addEventListener("click", () => handleClick("rock"));
 
 const paperBtn = document.querySelector("#paper");
+paperBtn.addEventListener("click", () => handleClick("paper"));
+
 const scissorsBtn = document.querySelector("#scissors");
+scissorsBtn.addEventListener("click", () => handleClick("scissors"));
 
 // APPENDING CHOSEN WEAPONS
 // const playerChoice = document.querySelector("#playerChoice");
