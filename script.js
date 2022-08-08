@@ -43,10 +43,24 @@ function playRound(playerSelection,computerSelection) {
 function handleClick(playerSelection) {
     let computerSelection = computerPlay();
     playRound(playerSelection,computerSelection);
+    updateScore (playerSelection,computerSelection);
     console.log(result);
 }
 
 // UI MANIPULATION
+const playerChoice = document.querySelector("#playerChoice")
+const computerChoice = document.querySelector("#computerChoice")
+const playerContent = document.createElement("div");
+const computerContent = document.createElement("div");
+
+function updateScore (playerSelection,computerSelection) {
+    // switch statement to show emoji
+    playerContent.textContent = `${playerSelection}`;
+    playerChoice.appendChild(playerContent);
+
+    computerContent.textContent = `${computerSelection}`;
+    computerChoice.appendChild(computerContent);
+}
 
 // EVENT LISTENING FOR CLICKS
 const rockBtn = document.querySelector("#rock");
@@ -60,13 +74,4 @@ scissorsBtn.addEventListener("click", () => handleClick("scissors"));
 
 // APPENDING CHOSEN WEAPONS
 // const playerChoice = document.querySelector("#playerChoice");
-// const playerContent = document.createElement("div");
-// playerContent.textContent = `${playerSelection}`;
-// playerChoice.appendChild(playerContent);
-
-// const computerChoice = document.querySelector("#computerChoice");
-// const computerContent = document.createElement("div");
-// computerContent.textContent = `${computerSelection}`;
-// computerChoice.appendChild(computerContent);
-
 
