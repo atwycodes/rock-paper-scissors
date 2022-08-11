@@ -44,23 +44,57 @@ function handleClick(playerSelection) {
     let computerSelection = computerPlay();
     playRound(playerSelection,computerSelection);
     updateScore (playerSelection,computerSelection);
-    console.log(result);
 }
 
 // UI MANIPULATION
-const playerChoice = document.querySelector("#playerChoice")
-const computerChoice = document.querySelector("#computerChoice")
+const playerChoice = document.querySelector("#player-choice");
+const computerChoice = document.querySelector("#computer-choice");
+const roundResult = document.querySelector("#round-result");
+
 const playerContent = document.createElement("div");
 const computerContent = document.createElement("div");
+const roundContent = document.createElement("div");
+
+playerContent.setAttribute("class", "update-choice")
+computerContent.setAttribute("class", "update-choice")
+roundContent.setAttribute("class", "result")
 
 function updateScore (playerSelection,computerSelection) {
-    // switch statement to show emoji
-    playerContent.textContent = `${playerSelection}`;
+    // switch statement to convert selection to emoji
+    switch(playerSelection) {
+        case "rock":
+            playerEmoji = "✊"
+            break;
+        case "scissors":
+            playerEmoji = "✌"
+            break;
+        case "paper":
+            playerEmoji = "✋"
+            break;
+    }
+
+    switch(computerSelection) {
+        case "rock":
+            computerEmoji = "✊"
+            break;
+        case "scissors":
+            computerEmoji = "✌"
+            break;
+        case "paper":
+            computerEmoji = "✋"
+            break;
+    }
+
+    playerContent.textContent = `${playerEmoji}`;
     playerChoice.appendChild(playerContent);
 
-    computerContent.textContent = `${computerSelection}`;
+    computerContent.textContent = `${computerEmoji}`;
     computerChoice.appendChild(computerContent);
+
+    roundContent.textContent = `${result}`
+    roundResult.appendChild(roundContent);
 }
+
 
 // EVENT LISTENING FOR CLICKS
 const rockBtn = document.querySelector("#rock");
@@ -71,7 +105,3 @@ paperBtn.addEventListener("click", () => handleClick("paper"));
 
 const scissorsBtn = document.querySelector("#scissors");
 scissorsBtn.addEventListener("click", () => handleClick("scissors"));
-
-// APPENDING CHOSEN WEAPONS
-// const playerChoice = document.querySelector("#playerChoice");
-

@@ -20,6 +20,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 .result-top {
     display: flex;
@@ -33,11 +34,20 @@ header {
     margin-bottom: 100px;
 }
 
+.result {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    color: white;
+}
+
 .buttons {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 .btn-choice {
     height: 100px;
@@ -50,5 +60,21 @@ header {
 }
 
 .sign {
+    font-size: 50px;
+}
+
+.update-choice {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-radius: 15px;
+    border: 2px solid gray;
+    padding-bottom: 10px;
     font-size: 50px;
 }
