@@ -23,41 +23,43 @@ function playRound(playerSelection,computerSelection) {
     }
     
     if (playerSelection === computerSelection) {
-        return result = `Tie Game. You selected ${playerSelection} & Your Opponent selected ${computerSelection}`;
+        return result = `Tied game! You selected ${playerSelection} & your opponent selected ${computerSelection}.`;
 
     } else if (losingConditions[playerSelection] === computerSelection) {
         // player loses
         computerScore++;
-        return result =  `You Lost... ${computerSelection} beats ${playerSelection}`;
+        return result =  `You lost... ${computerSelection} beats ${playerSelection}.`;
 
     } else if (winningConditions[playerSelection] === computerSelection) {
         // player wins
         playerScore++;
-        return result =  `You Won! ${playerSelection} beats ${computerSelection}` ;
+        return result =  `You won! ${playerSelection} beats ${computerSelection}.` ;
 
     } else {
         return result =  `${playerSelection} is invalid. Please call the function again.`;
     }
 }
 
-function handleClick(playerSelection) {
-    let computerSelection = computerPlay();
-    playRound(playerSelection,computerSelection);
-    updateScore (playerSelection,computerSelection);
-}
 
 // UI MANIPULATION
 const playerChoice = document.querySelector("#player-choice");
 const computerChoice = document.querySelector("#computer-choice");
 const roundResult = document.querySelector("#round-result");
+const playerScoreResult = document.querySelector("#player-choice");
+const computerScoreResult = document.querySelector("#computer-choice");
 
 const playerContent = document.createElement("div");
 const computerContent = document.createElement("div");
 const roundContent = document.createElement("div");
+const playerScoreResultContent = document.createElement("div");
+const computerScoreResultContent = document.createElement("div");
 
 playerContent.setAttribute("class", "update-choice")
 computerContent.setAttribute("class", "update-choice")
 roundContent.setAttribute("class", "result")
+playerScoreResultContent.setAttribute("class", "result")
+computerScoreResultContent.setAttribute("class", "result")
+
 
 function updateScore (playerSelection,computerSelection) {
     // switch statement to convert selection to emoji
@@ -85,6 +87,12 @@ function updateScore (playerSelection,computerSelection) {
             break;
     }
 
+    playerScoreResultContent.textContent = `${playerScore}`
+    playerScoreResult.appendChild(playerScoreResultContent);
+
+    computerScoreResultContent.textContent = `${computerScore}`
+    computerScoreResult.appendChild(computerScoreResultContent);
+    
     playerContent.textContent = `${playerEmoji}`;
     playerChoice.appendChild(playerContent);
 
@@ -93,8 +101,10 @@ function updateScore (playerSelection,computerSelection) {
 
     roundContent.textContent = `${result}`
     roundResult.appendChild(roundContent);
-}
 
+
+
+}
 
 // EVENT LISTENING FOR CLICKS
 const rockBtn = document.querySelector("#rock");
@@ -105,3 +115,9 @@ paperBtn.addEventListener("click", () => handleClick("paper"));
 
 const scissorsBtn = document.querySelector("#scissors");
 scissorsBtn.addEventListener("click", () => handleClick("scissors"));
+
+function handleClick(playerSelection) {
+    let computerSelection = computerPlay();
+    playRound(playerSelection,computerSelection);
+    updateScore (playerSelection,computerSelection);
+}
