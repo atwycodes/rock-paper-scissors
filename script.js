@@ -106,6 +106,14 @@ function updateScore (playerSelection,computerSelection) {
 
 }
 
+function checkGameOver() {
+    if (playerScore === 5) { 
+        alert("You Won!");
+    } else if (computerScore === 5) {
+        alert("You Lost!");
+    }
+}
+
 // EVENT LISTENING FOR CLICKS
 const rockBtn = document.querySelector("#rock");
 rockBtn.addEventListener("click", () => handleClick("rock"));
@@ -120,4 +128,5 @@ function handleClick(playerSelection) {
     let computerSelection = computerPlay();
     playRound(playerSelection,computerSelection);
     updateScore (playerSelection,computerSelection);
+    checkGameOver();
 }
